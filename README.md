@@ -9,3 +9,7 @@ __Можно выбрать 2 скорости:__
 * Нормальная (15 минут)
 
 Использован фреймворк [UIkit](https://getuikit.com)
+
+---
+
+DEMO: http://bserg.ru/project/dpdg
