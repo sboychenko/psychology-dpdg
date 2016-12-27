@@ -1,0 +1,120 @@
+@charset "utf-8";
+/*
+#fig html, #fig body, #fig div, #fig span, #fig applet, #fig object, #fig iframe,
+#fig h1, #fig h2, #fig h3, #fig h4, #fig h5, #fig h6, #fig p, #fig blockquote,
+#fig pre, #fig a, #fig abbr, #fig acronym, #fig address, #fig big, #fig cite,
+#fig code, #fig del, #fig dfn, #fig em, #fig img, #fig ins, #fig kbd, #fig q,
+#fig s, #fig samp, #fig small, #fig strike, #fig strong, #fig sub, #fig sup,
+#fig tt, #fig var, #fig b, #fig u, #fig i, #fig center, #fig dl, #fig dt,
+#fig dd, #fig ol, #fig ul, #fig li, #fig fieldset, #fig form, #fig label,
+#fig legend, #fig table, #fig caption, #fig tbody, #fig tfoot, #fig thead,
+#fig tr, #fig th, #fig td, #fig article, #fig aside, #fig canvas, #fig details,
+#fig embed, #fig figure, #fig figcaption, #fig footer, #fig header, #fig menu,
+#fig nav, #fig output, #fig ruby, #fig section, #fig summary, #fig time, #fig mark,
+#fig audio, #fig video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+#fig article, #fig aside, #fig details, #fig figcaption, #fig figure, #fig footer,
+#fig header, #fig menu, #fig nav, #fig section {
+    display: block;
+}
+
+
+#fig body {
+    line-height: 1;
+}
+
+#fig ol, #fig ul {
+    list-style: none;
+}
+
+#fig blockquote, #fig q {
+    quotes: none;
+}
+
+#fig blockquote:before, #fig blockquote:after, #fig q:before, #fig q:after {
+    content: none;
+}
+
+#fig table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+*/
+body, html {
+    overflow: hidden;
+}
+
+
+#fig {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: none;
+}
+
+#fig div {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+#fixxy {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    width: 1px;
+    height: 1px;
+}
+
+
+html.uk-contrast {
+    background: black !important;
+}
+
+html.uk-contrast  .uk-panel-box {
+    background: #000;
+}
+
+.title {
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    min-width: 300px;
+    height: 40%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.title h1, .title h1 a {
+    /*text-decoration: none;*/
+}
+
+.title h1 a {
+    /*border-bottom: 3px solid #67CBE2;*/
+}
+
+.title p {
+
+}
+
+.config {
+    position: fixed !important;
+    width: 25%;
+    min-width: 300px;
+    /*height: 120px;*/
+    right: 50px;
+    bottom: 50px;
+    z-index: 1001;
+}
+
