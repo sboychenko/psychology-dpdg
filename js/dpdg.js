@@ -563,6 +563,58 @@ function raspr(index) {
     }
 }
 
+function doDpdg() {
+    if (!play) {
+        $(".title h1").text("Начинаем...");
+        $(".title h3").text("Для выхода нажимайте F11");
+
+        index = 0;
+
+        $(".config").hide();
+        $(".close").show();
+
+        setTimeout(
+            function () {
+                twidth = window.innerWidth;
+                theight = window.innerHeight;
+
+                $("#fig").attr({
+                    'width': twidth + 'px',
+                    'height': theight + 'px'
+                });
+                $("#fig").css({
+                    'width': twidth + 'px',
+                    'height': theight + 'px'
+                });
+
+                play = true;
+                example = document.getElementById("fig");
+                ctx = example.getContext('2d');
+                w = twidth - 50;
+                h = theight - 50;
+                w2 = w * 2;
+                h2 = h * 2;
+                w_2 = Math.round(w / 2);
+                h_2 = Math.round(h / 2);
+                $(".info").hide();
+                raspr(index);
+            },
+            3000
+        );
+    } else {
+        // Reload page
+        play = false;
+        location = location;
+    }
+}
+
+function stopDpdg() {
+    if (play) {
+        play = false;
+        location = location;
+    }
+}
+
 
 $(document).ready(
     function () {
@@ -602,46 +654,25 @@ $(document).ready(
             function (e) {
 
                 if ((e.keyCode == 122) || (e.which == 122)) {
-                    if (!play) {
-                        $(".title h1").text("Начинаем...");
-                        $(".title h3").text("Для выхода нажимайте F11");
+                    doDpdg();
+                }
 
-                        index = 0;
-
-                        $(".config").hide();
-
-                        setTimeout(
-                            function () {
-
-                                $("#fig").attr({
-                                    'width': screen.width + 'px',
-                                    'height': screen.height + 'px'
-                                });
-                                $("#fig").css({
-                                    'width': screen.width + 'px',
-                                    'height': screen.height + 'px'
-                                });
-
-                                play = true;
-                                example = document.getElementById("fig");
-                                ctx = example.getContext('2d');
-                                w = screen.width - 50;
-                                h = screen.height - 50;
-                                w2 = w * 2;
-                                h2 = h * 2;
-                                w_2 = Math.round(w / 2);
-                                h_2 = Math.round(h / 2);
-                                $(".info").hide();
-                                raspr(index);
-                            },
-                            3000
-                        );
-                    } else {
-                        // Reload page
-                        location = location;
-                    }
+                if ((e.keyCode == 27) || (e.which == 27)) {
+                    stopDpdg();
                 }
             }
+        );
+
+        $("#start").click(
+            function () {
+                doDpdg()
+            }
+        );
+
+        $("#stop").click(
+          function () {
+              stopDpdg();
+          }
         );
     }
 );
